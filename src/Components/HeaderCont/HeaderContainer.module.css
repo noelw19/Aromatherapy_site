@@ -1,0 +1,14 @@
+.container {
+    width:100vw;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: 'relative';
+}
+
+.container .h1 {
+    position:absolute;
+}
+
