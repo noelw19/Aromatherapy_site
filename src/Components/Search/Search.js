@@ -19,7 +19,7 @@ const InputContainer = styled.div`
     margin-bottom: 2rem;
 
     input {
-        width: 30%;
+        width: 80%;
         height: 2rem;
         border: none;
         color: grey;
@@ -48,14 +48,19 @@ const RenderContainer = styled.div`
 const Search = () => {
     const [searchValue, setSearchValue ] = useState('');
     const [results, setResults ] = useState([]);
+    const [searchBoolean, setSearchBoolean ] = useState(true);
     
 
     useEffect(() => {
         const handleSearch = () => {
             let filteredSearch = herbs.filter( herb => {return herb.herb.toLowerCase().includes( searchValue.toLowerCase())});
-
         
-            setResults(filteredSearch);
+            if(!filteredSearch[0]) {
+                setSearchBoolean(false);
+            }else{
+                setSearchBoolean(true);
+                setResults(filteredSearch);
+            }
         }
 
         handleSearch();
@@ -78,12 +83,12 @@ const Search = () => {
             
             <InputContainer >
                 <input input='text' value={searchValue}  onChange={handleOnChange}/>
-                <button type='button' onSubmit={handleOnChange} >Search</button>
             </InputContainer>
 
-            <RenderContainer>
-                {results.map(herb => (
-                <Card 
+            
+                {searchBoolean ? <RenderContainer> {results.map(herb => (
+                <Card
+                    key={herb.id}
                     name={herb.herb}
                     treatment={herb.treatment}
                     properties={herb.properties}
@@ -92,8 +97,8 @@ const Search = () => {
                     latin={herb.latin}
                     warning={herb.warning}
                     />
-            ))}
-                </RenderContainer>
+            ))} </RenderContainer> : <p>No results containing '{searchValue}'</p>}
+                
             
         </SearchContainer>
     )

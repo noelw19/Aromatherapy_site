@@ -59,46 +59,294 @@
         "id": 2,
         "herb": "Cypress",
         "treatment": [
-          "Stimulates Appetite",
-          "Analgesic",
-          "Rheumatic Pain",
-          "Aids Digestion",
-          "Flatulence"
+          "Astringent", "Antiseptic", 
+          "Circulation", "Asthma", 
+          "Menstrual Regulation", 
+          "Haemorrhoids", "Foot Odour"
         ],
         "properties": [
-          "Aphrodisiac",
-          "Relaxant",
-          "Tonic",
-          "Skincare"
+          "Insect Repellent", "Skincare",
+          "Cold Compress", "Tonic",
+          "Deoderant", "Antiseptic"
         ],
         "uses": [
-          "Massage"
+          "Bath", "Massage", "Vaporise", "Local Wash"
         ],
-        "blendWith": [],
-        "latin": "Coriandrum Sativum",
+        "blendWith": ["Bergamot, Juniper"],
+        "latin": "Cupressus Semperirens",
         "warning": []
       },
       {
         "id": 3,
-        "herb": "Lilly",
+        "herb": "Bergamot",
         "treatment": [
-          "Stimulates Appetite",
-          "Analgesic",
-          "Rheumatic Pains",
-          "Aids Digestion",
-          "Flatulence"
+          "Cystitis", "Anxiety", "Skincare",
+          "Acne", "Appetite Regulator", "Digestive Aid", 
+          "Urethritis"
         ],
         "properties": [
-          "Aphrodisiac",
-          "Relaxant",
-          "Tonic",
-          "Skincare"
+          "Anti-depressant", "Antiseptic", 
+          "Skincare", "Stomachic (Digestive)", 
+          "Relaxant", "Deoderant"
+        ],
+        "uses": [
+          "Massage", "Local Wash", "Hot Compress", "Vaporise", "Bath"
+        ],
+        "blendWith": ["Cypress", "Jasmine"],
+        "latin": "Citrus Bergamia",
+        "warning": ["Sunlight Sensitive"]
+      },
+      {
+        "id": 4,
+        "herb": "Black Pepper",
+        "treatment": [
+          "Digestive Tract", "Antispasmodic", 
+          "Kidneys", "Muscle Pain", "Stiff Joint",
+          "Anaemia"
+        ],
+        "properties": [
+          "Relaxant", "Tonic", "Aphrodisiac"
         ],
         "uses": [
           "Massage"
         ],
+        "blendWith": ["Rosemary", "Lavender", "Majoram"],
+        "latin": "Piper Nigrum",
+        "warning": ["Do not overuse"]
+      },
+      {
+        "id": 5,
+        "herb": "Cajeput",
+        "treatment": [
+          "Infection", "Cold", "Catarrh",
+          "Sinusitis", "Headaches", "Pain Killing",
+          "Sore Throat"
+        ],
+        "properties": [
+          "Bactericide", "Antiseptic",
+          "Insect Repellent", "Skincare"
+        ],
+        "uses": [
+          "Mouthwash", "Inhalations"
+        ],
+        "blendWith": ["Lavender (balances stimulant)"],
+        "latin": "Melaleuca Leucodendron",
+        "warning": ["Not before bed", "Irritates sensitive skin"]
+      },
+      {
+        "id": 6,
+        "herb": "Cedarwood",
+        "treatment": [
+          "Antiseptic", "Bronchitis", "Catarrh", 
+          "Cystitis", "Urinal","Vaginal Infections"
+        ],
+        "properties": [
+          "Skincare", "Aphrodisiac", "Insect Repellent", 
+          "Scalp Tonic", "Antiseptic", "Tonic", "Relaxant",
+          "Meditation Aid"
+        ],
+        "uses": [
+          "Massage", "Bath", "Inhalations", "Vaporise"
+        ],
         "blendWith": [],
-        "latin": "Coriandrum Sativum",
+        "latin": "Cedrus Atlantica",
+        "warning": ["Do not use while pregnant"]
+      },
+      {
+        "id": 7,
+        "herb": "Chamomile",
+        "treatment": [
+          "Soothing", "Stomach Upsets", "Anti-inflammatory",
+          "Insomnia", "Sprains", "Earache", "Hair", "Eyes"
+        ],
+        "properties": [
+          "Anti-depressant", "Skincare", "Bactericide", 
+          "Stomachic (Digestive)", "Relaxant"
+        ],
+        "uses": [
+          "Massage", "Bath", "Scalp Tonic", "Hot Compress"
+        ],
+        "blendWith": ["Lavender"],
+        "latin": "Anthemis Nobilis",
         "warning": []
+      },
+      {
+        "id": 8,
+        "herb": "Clary Sage",
+        "treatment": [
+          "Muscle Relaxant", "Asthma",
+          "Aids Digestion", "Tonic", "Stress",
+          "Tension", "Menstrual", "Cramps"
+        ],
+        "properties": [
+          "Aphrodisiac", "Relaxant", "Tonic"
+        ],
+        "uses": [
+          "Massage", "Bath", "Cold Compress", "Vaporise"
+        ],
+        "blendWith": ["Lavender", "Sandalwood"],
+        "latin": "Salvia Sclarea",
+        "warning": ["Do not use while pregnant", "Do not use with alcohol"]
+      },
+      {
+        "id": 9,
+        "herb": "Sandalwood",
+        "treatment": [
+          "Antiseptic", "Dry Skin", "Sore Throat",
+          "Cystitis", "Bronchitis", "Urinary Infections"
+        ],
+        "properties": [
+          "Skincare", "Aphrodisiac", "Antiseptic", "Meditation Aid"
+        ],
+        "uses": [
+          "Massage", "Bath", "Inhalations", "Vaporise"
+        ],
+        "blendWith": ["Ylang Ylang", "Black Pepper", "Neroli"],
+        "latin": "Santalum Album",
+        "warning": []
+      },
+      {
+        "id": 10,
+        "herb": "Tea Tree",
+        "treatment": [
+          "Influenza", "Fungi", "Viruses",
+          "Warts", "Acne", "Ringworm", 
+          "Cold Sores", "Blisters"
+        ],
+        "properties": [
+          "Skincare", "Insect Repellent", "Antiseptic",
+          "Bactericide", "Anti-fungal"
+        ],
+        "uses": [
+          "Bath", "Massage", "Inhalations", "Mouthwash"
+        ],
+        "blendWith": ["Lavender"],
+        "latin": "Melaleuca Alternifolia",
+        "warning": ["Irritates Sensitive Skin"]
+      },
+      {
+        "id": 11,
+        "herb": "Ylang Ylang",
+        "treatment": [
+          "Relieves Sexual Anxiety", "High Blood Pressure",
+          "Slows Breathing", "Anti-depressant"
+        ],
+        "properties": [
+          "Skincare", "Anti-depressant", "Aphrodisiac", 
+          "Relaxant", "Tonic", "Stomachic (Digestive)"
+        ],
+        "uses": [
+          "Massage", "Scalp Tonic", "Bath", "Vaporise"
+        ],
+        "blendWith": ["Lemon", "Bergamot"],
+        "latin": "Cananga Odorata",
+        "warning": ["Do not overuse"]
+      },
+      {
+        "id": 12,
+        "herb": "Pine",
+        "treatment": [
+          "Chest Infections", "Colds", "Lung",
+          "Sore Throats", "Circulation", "Rheumatic Pains"
+        ],
+        "properties": [
+          "Antiseptic", "Bactericide", "Deoderant"
+        ],
+        "uses": [
+          "Bath", "Inhalations", "Vaporise", "Do not use undiluted"
+        ],
+        "blendWith": ["Lavender", "Eucalyptus"],
+        "latin": "Pinus Sylvestris",
+        "warning": ["Irritates Sensitive Skin"]
+      },
+      {
+        "id": 13,
+        "herb": "Orange",
+        "treatment": [
+          "Antispasmodic", "Stomach", "Mild Sedative",
+          "Constipation", "Chronic Diarrhoea"
+        ],
+        "properties": [
+          "Skincare", "Relaxant", "Stomachic (Digestive)"
+        ],
+        "uses": [
+          "Bath", "Massage", "Mouthwash", "Vaporise"
+        ],
+        "blendWith": ["Lavender", "Majoram"],
+        "latin": "Citrus Aurantium",
+        "warning": []
+      },
+      {
+        "id": 14,
+        "herb": "Patchouli",
+        "treatment": [
+          "Anti-depressant", "Antiseptic", "Stings",
+          "Astringent", "Fluid Retention", "Anti-inflammatory"
+        ],
+        "properties": [
+          "Skincare", "Aphrodisiac", "Antiseptic", 
+          "Deoderant", "Anti-fungal", "Tonic"
+        ],
+        "uses": [
+          "Bath", "Massage", "Vaporise"
+        ],
+        "blendWith": ["Bergamot", "Geranium"],
+        "latin": "Pogostemon Cablin",
+        "warning": ["Do not overuse"]
+      },
+      {
+        "id": 15,
+        "herb": "Peppermint",
+        "treatment": [
+          "Colic", "Diarrhoea", "Indigestion", 
+          "Vomitting", "Stomach Pain", "Cold",
+          "Fever", "Headache"
+        ],
+        "properties": [
+          "Skincare", "Insect Repellent", 
+          "Antiseptic", "Stomachic (Digestive)"
+        ],
+        "uses": [
+          "Bath", "Massage", "Inhalations", "Vaporise"
+        ],
+        "blendWith": ["Lavender", "Majoram"],
+        "latin": "Mentha Piperata",
+        "warning": ["Irritates Sensitive Skin", "Not before bed"]
+      },
+      {
+        "id": 16,
+        "herb": "Rose",
+        "treatment": [
+          "Anti-depressant", "Anorexia", "Menstrual Regulation",
+          "Improves Confidence"
+        ],
+        "properties": [
+          "Skincare", "Anti-depressant", "Aphrodisiac", "Tonic"
+        ],
+        "uses": [
+          "Bath", "Massage", "Mouthwash"
+        ],
+        "blendWith": ["Jasmine", "Geranium", "Neroli"],
+        "latin": "Rosa Centifolia (Damascena)",
+        "warning": []
+      },
+      {
+        "id": 17,
+        "herb": "Rosemary",
+        "treatment": [
+            "Heart", "Liver", "Cold", "Gallbladder",
+            "Catarrh", "Speech", "Sinusitis", "Asthma", "Sight",
+            "Memory"
+           ],
+        "properties": [
+          "Skincare", "Scalp Tonic", "Antiseptic", "Bactericide",
+          "Meditation Aid", "Tonic"
+        ],
+        "uses": [
+          "Massage", "Bath", "Inhalations", "Hot Compress", "Vaporise"
+        ],
+        "blendWith": ["Lavender", "Majoram"],
+        "latin": "Rosmarinus Officinalis",
+        "warning": ["Do not overuse"]
       }
 ]

@@ -64,8 +64,6 @@ const Card = (props) => {
     const imagePicker = (herb) => {
         let thisHerb;
         Object.entries(Images).forEach(([key, value]) => {
-            console.log(`${key} + ${value}`)
-            console.log(herb)
             if(herb === `${key}`) {
                 thisHerb = `${value}`;
             }
@@ -86,7 +84,7 @@ const Card = (props) => {
                     
                     <ul>
                     {props.treatment.map(treatWith => (
-                        <li key={props.id}>{treatWith}</li>
+                        <li key={treatWith}>{treatWith}</li>
                     ))}
                     </ul>
                 </InnerInfo>
@@ -95,7 +93,7 @@ const Card = (props) => {
                         <h3>Properties</h3>
                         <ul>
                         {props.properties.map(props => (
-                            <li key={props.id}>{props}</li>
+                            <li key={props.index}>{props}</li>
                         ))}</ul>
                     </InnerInfo> 
 
@@ -104,8 +102,8 @@ const Card = (props) => {
                 <SpanCard>
                     <h3>Ways to be used</h3>
                     <ul>
-                        {props.uses.map(props => (
-                            <li key={props.id}>{props}</li>
+                        {props.uses.map(prop => (
+                            <li key={props.index}>{prop}</li>
                         ))}</ul>
 
                 </SpanCard>
@@ -115,7 +113,7 @@ const Card = (props) => {
                     {props.blendWith[0] ? 
                     <ul>
                         {props.blendWith.map(props => (
-                            <li key={props.id}>{props}</li>
+                            <li key={props.index}>{props}</li>
                         ))}</ul>
                      : <p>This herbs blends best on its own.</p>}
 
@@ -132,8 +130,8 @@ const Card = (props) => {
                         <h3>Warnings</h3>
                         {props.warning[0] ?
                         <ul>
-                        {props.warning.map(props => (
-                            <li>{props}</li>
+                        {props.warning.map(prop => (
+                            <li key={props.index}>{prop}</li>
                         ))}</ul>
                          : <p>No warnings to show</p>}
                     </InnerInfo> 
