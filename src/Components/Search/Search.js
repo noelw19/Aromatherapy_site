@@ -70,7 +70,7 @@ const Search = () => {
 
     }
 
-
+    //add some text if search results dont match any herbs
     
 
     return (
