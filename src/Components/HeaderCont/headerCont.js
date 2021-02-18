@@ -6,7 +6,7 @@ const HeaderContainer = () => {
         <>
         <div className={styles.container}>
     
-        <h1>Animated Header</h1>
+        <h1>Aromatherapy Herbs</h1>
     
         </div>
         </>)

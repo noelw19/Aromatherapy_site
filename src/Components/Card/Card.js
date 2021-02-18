@@ -1,115 +1,147 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Images from '../../Images/index';
+
 const CardContainer = styled.div`
     background: white;
     width: 100vw;
     height: 100%;
-    padding-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     padding: 0 1rem 0 1rem;
     
     
     h1{
-        background-image: linear-gradient(to right, #9890e3 0%, #b1f4cf 100%);
-        color: white;
+        color: black;
         margin: 3rem 2rem 0 2rem;
         border-top: 1rem solid white;
         padding: .5rem 0 .5rem 0;
 
-    
+    }
+
+    img {
+        width: 75%;
+        height: 18rem;
+        object-fit: cover;
+        border-radius: 30%;
+        
+        
+    }
+
+    @media(min-width: 660px) {
+        width: 35vw;
+        border-radius: 13%;
+    }
 `;
 
 const InfoContainer = styled.div`
     width: 100%;
     display: flex;
     
-
+    ul {
+        list-style: none;
+        padding:0;
+    }
 `;
 
-const Treatment = styled.div`
+const InnerInfo = styled.div`
     width: 50%;
     height: auto;
 
-    ul {
-        list-style: none;
-        text-align: left;
-        padding:0;
-    }
-
 
 `;
 
-const Properties = styled.div`
-    width: 50%;
-
-    
-`;
-
-const UlContainer = styled.div`
-ul{
-    list-style: none;
-    text-align: center;
-    padding:0;
-}
-
-h3 {
-    text-align:left;
-    margin-left:1rem;
-}
-`;
-
-
-
-const Uses = styled.div`
+const SpanCard = styled.div`
     width:100%;
     border-top: 1px solid black;
     padding-bottom: 1rem;
 
+
 `;
 
-function Card(props) {
+const Card = (props) => {
+
+    const imagePicker = (herb) => {
+        let thisHerb;
+        Object.entries(Images).forEach(([key, value]) => {
+            console.log(`${key} + ${value}`)
+            console.log(herb)
+            if(herb === `${key}`) {
+                thisHerb = `${value}`;
+            }
+        })
+        return thisHerb;
+    }
+
     return (
         <CardContainer> 
             <h1>{props.name}</h1>
+            <div>
+            <img src={imagePicker(props.name)} alt='w'></img>
+            </div>
                 <InfoContainer>
                 
-                <Treatment >
+                <InnerInfo>
                     <h3>Treatments</h3>
-                    <UlContainer>
+                    
                     <ul>
                     {props.treatment.map(treatWith => (
-                        <li>{treatWith}</li>
+                        <li key={props.id}>{treatWith}</li>
                     ))}
                     </ul>
-                    </UlContainer>
-                </Treatment>
+                </InnerInfo>
 
-                    <Properties>
+                    <InnerInfo>
                         <h3>Properties</h3>
-                        <UlContainer>
                         <ul>
                         {props.properties.map(props => (
-                            <li>{props}</li>
+                            <li key={props.id}>{props}</li>
                         ))}</ul>
-                        </UlContainer>
-                    </Properties> 
+                    </InnerInfo> 
 
                 </InfoContainer>
 
-                <Uses>
-                    <h3>Uses</h3>
-                    <UlContainer>
+                <SpanCard>
+                    <h3>Ways to be used</h3>
                     <ul>
                         {props.uses.map(props => (
+                            <li key={props.id}>{props}</li>
+                        ))}</ul>
+
+                </SpanCard>
+
+                <SpanCard>
+                    <h3>Blend With</h3>
+                    {props.blendWith[0] ? 
+                    <ul>
+                        {props.blendWith.map(props => (
+                            <li key={props.id}>{props}</li>
+                        ))}</ul>
+                     : <p>This herbs blends best on its own.</p>}
+
+                </SpanCard> 
+
+            <InfoContainer>
+                
+                <InnerInfo >
+                    <h3>Latin Name</h3>
+                    <p>{props.latin}</p>
+                </InnerInfo>
+
+                    <InnerInfo>
+                        <h3>Warnings</h3>
+                        {props.warning[0] ?
+                        <ul>
+                        {props.warning.map(props => (
                             <li>{props}</li>
                         ))}</ul>
-                    </UlContainer>
+                         : <p>No warnings to show</p>}
+                    </InnerInfo> 
 
-                </Uses>
+                </InfoContainer>
 
         </CardContainer>
     )
 }
 
-export default Card
+export default Card;
