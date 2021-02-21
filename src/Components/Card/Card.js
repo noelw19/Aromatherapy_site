@@ -5,9 +5,7 @@ import Images from '../../Images/index';
 
 const CardContainer = styled.div`
     background: white;
-    width: 100vw;
-    height: 100%;
-    margin-bottom: 2rem;
+    width: 40vw;
     padding: 0 1rem 0 1rem;
     
     
@@ -16,49 +14,88 @@ const CardContainer = styled.div`
         margin: 3rem 2rem 0 2rem;
         padding: 2rem 0 .5rem 0;
         height: auto;
+        font-size: 1.5rem;
 
     }
 
+    h3{
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: .5rem;
+    }
+
+    p{
+        font-size: .5rem;
+    }
+
     img {
-        width: 75%;
-        height: 18rem;
+        border-radius: 50%;
+        width: 60%;
+        height: 8rem;
         object-fit: cover;
+    
+        @media(min-width: 660px) {
+            width: 75%;
+        height: 18rem;
         border-radius: 30%;
+    
+        }
         
-        
+    }
+
+    .bottom {
+        border-bottom: none;
     }
 
     //desktop breakpoint
     @media(min-width: 660px) {
         width: 35vw;
         border-radius: 13%;
+
+        h1{
+            font-size: 2rem;
+        }
+
+        h3{
+            font-size: 1.5rem;
+        }
+    
+        li {
+            font-size: 1rem;
+        }
+    
+        p{
+            font-size: 1rem;
+        }
     }
 `;
 
 const InfoContainer = styled.div`
     width: 100%;
     display: flex;
-    border-bottom: 1px solid black;
+    
     
     ul {
         list-style: none;
         padding:0;
     }
+
+    
 `;
 
 const InnerInfo = styled.div`
     width: 50%;
     height: auto;
 
+    .warning{
+        color: red;
+    }
 
 `;
 
-const SpanCard = styled.div`
-    width:100%;
-    padding-bottom: 1rem;
-
-
-`;
+//after click set up new card view for mobile with bigger image and cleaner look
 
 const Card = (props) => {
     const [thisHerb, SetThisHerb] = useState('')
@@ -84,6 +121,7 @@ const Card = (props) => {
         return thisHerb;
     }
 
+
     const SmallCardView = () => {
         return (
             <>
@@ -98,8 +136,8 @@ const Card = (props) => {
                     <p>{props.latin}</p>
                 </InnerInfo>
 
-                    <InnerInfo>
-                        <h3>Warnings</h3>
+                    <InnerInfo >
+                        <h3 className='warning'>Warning!</h3>
                         {props.warning[0] ?
                         <ul>
                         {props.warning.map(warn => (
@@ -137,18 +175,17 @@ const Card = (props) => {
 
                 </InfoContainer>
 
+                <InfoContainer className='bottom'>
                 
-
-                <SpanCard>
+                    <InnerInfo>
                     <h3>Ways to be used</h3>
                     <ul>
                         {props.uses.map(use => (
                             <li key={use.index}>{use}</li>
                         ))}</ul>
+                    </InnerInfo>
 
-                </SpanCard>
-
-                <SpanCard>
+                    <InnerInfo>
                     <h3>Blend With</h3>
                     {props.blendWith[0] ? 
                     <ul>
@@ -156,7 +193,9 @@ const Card = (props) => {
                             <li key={blend.index}>{blend}</li>
                         ))}</ul>
                      : <p>This herbs blends best on its own.</p>}
-                </SpanCard> 
+                    </InnerInfo> 
+
+                </InfoContainer>
             </>
         )
     }
