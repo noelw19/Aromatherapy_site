@@ -5,7 +5,7 @@ import Images from '../../Images/index';
 
 const CardContainer = styled.div`
     background: white;
-    width: 40vw;
+    width: 50vw;
     padding: 0 1rem 0 1rem;
     
     
