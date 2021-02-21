@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HeaderContainer from './Components/HeaderCont/headerCont';
-import MainContainer from './Components/MainContainer/MainContainer';
+import Search from './Components/Search/Search';
 
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <HeaderContainer />
-      <MainContainer />
+      <Search />
     </div>
   );
 }

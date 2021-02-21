@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
+import errorImage from '../../Images/pexels-alleksana-4271933.jpg'
+
 import herbs from '../../herbs.json';
 import Card from '../Card/Card';
 
@@ -10,6 +12,19 @@ const SearchContainer = styled.div`
 
     h4 {
         text-decoration: underline;
+    }
+
+    button {
+        border: none;
+        border-radius: none;
+        cursor: pointer;
+        background: white;
+        color: black;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
     }
 `;
 
@@ -26,13 +41,6 @@ const InputContainer = styled.div`
         text-align: center;
         border-radius: none;
     }
-
-    button {
-        border: none;
-        background-image: linear-gradient(to right, #ebc0fd 0%, #d9ded8 100%);
-        color: white;
-    }
-
 `;
 
 
@@ -42,13 +50,29 @@ const RenderContainer = styled.div`
     display:flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 
+    div{
+        margin-bottom: 1rem;
+    }
+
+`;
+
+const NoResult = styled.div`
+    width: 100vw;
+    height:100vh;
+
+    img{
+        width:50%;
+        height:auto;
+    }
 `;
 
 const Search = () => {
     const [searchValue, setSearchValue ] = useState('');
     const [results, setResults ] = useState([]);
     const [searchBoolean, setSearchBoolean ] = useState(true);
+    const [clickedView, setClickedView] = useState(false);
     
 
     useEffect(() => {
@@ -68,26 +92,37 @@ const Search = () => {
     }, [searchValue])
 
 
-
+    //handles input onChange
     const handleOnChange = (e) => {
        let searchWord = e.target.value;
         setSearchValue(searchWord);
+    }
+    
+    const clickValue = (value) => {
+        
+        if(value[0]) {
+            let val = value;
 
+            setSearchValue(val);
+            setClickedView(true);
+            document.documentElement.scrollTop = 0
+        }
     }
 
-    //add some text if search results dont match any herbs
-    
-
+    function handleGoBack(){
+        setSearchValue('');
+        setClickedView(false);
+    }
+   
     return (
         <SearchContainer>
             
             <InputContainer >
                 <input input='text' value={searchValue}  onChange={handleOnChange}/>
             </InputContainer>
-
-            
-                {searchBoolean ? <RenderContainer> {results.map(herb => (
-                <Card
+            {clickedView && <button onClick={handleGoBack}>Go back</button>}
+            {searchBoolean ? <RenderContainer> {results.map(herb => (
+                    <div><Card 
                     key={herb.id}
                     name={herb.herb}
                     treatment={herb.treatment}
@@ -96,8 +131,13 @@ const Search = () => {
                     blendWith= {herb.blendWith}
                     latin={herb.latin}
                     warning={herb.warning}
-                    />
-            ))} </RenderContainer> : <p>No results containing '{searchValue}'</p>}
+                    clicked={clickedView}
+                    cardValue={clickValue}
+                    /> </ div>
+            
+                
+                ))} </RenderContainer> : <NoResult><p>No results containing '{searchValue}'</p><img src={errorImage} alt='error'></img></NoResult>}
+                
                 
             
         </SearchContainer>
