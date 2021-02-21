@@ -8,6 +8,7 @@ import Card from '../Card/Card';
 
 
 const SearchContainer = styled.div`
+    width:100vw;
     text-align: center;
 
     h4 {
@@ -114,14 +115,9 @@ const Search = () => {
         setClickedView(false);
     }
    
-    return (
-        <SearchContainer>
-            
-            <InputContainer >
-                <input input='text' value={searchValue}  onChange={handleOnChange}/>
-            </InputContainer>
-            {clickedView && <button onClick={handleGoBack}>Go back</button>}
-            {searchBoolean ? <RenderContainer> {results.map(herb => (
+    const CardMap = () => {
+        return (
+            <>{results.map(herb => (
                     <div><Card 
                     key={herb.id}
                     name={herb.herb}
@@ -136,7 +132,16 @@ const Search = () => {
                     /> </ div>
             
                 
-                ))} </RenderContainer> : <NoResult><p>No results containing '{searchValue}'</p><img src={errorImage} alt='error'></img></NoResult>}
+                ))}</>)
+    }
+    return (
+        <SearchContainer>
+            
+            <InputContainer >
+                <input input='text' value={searchValue}  onChange={handleOnChange}/>
+            </InputContainer>
+            {clickedView && <button onClick={handleGoBack}>Go back</button>}
+            {searchBoolean ? <RenderContainer> {CardMap()} </RenderContainer> : <NoResult><p>No results containing '{searchValue}'</p><img src={errorImage} alt='error'></img></NoResult>}
                 
                 
             

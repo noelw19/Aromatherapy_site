@@ -1,6 +1,5 @@
 body {
   width: 100vw;
-  min-height:100vh;
   padding: 2rem;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   overflow-x:hidden;
