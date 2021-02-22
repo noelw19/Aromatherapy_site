@@ -5,12 +5,11 @@ import Images from '../../Images/index';
 
 const CardContainer = styled.div`
     background: white;
-    padding: 0 1rem 0 1rem;
     
     h1{
         color: black;
-        margin: 1rem 2rem 0 2rem;
-        padding: 2rem 0 .5rem 0;
+        padding: 1rem 0 .5rem 0;
+        width: 100%;
         height: auto;
         font-size: 1.5rem;
 
@@ -62,6 +61,9 @@ const CardContainer = styled.div`
         p {
             font-size: .8rem;
         }
+    }
+
+    .notClicked {
     }
     
     //styling for desktop
@@ -197,7 +199,7 @@ const Card = (props) => {
             <InfoContainer className={props.clicked ? 'clicked' : 'notClicked'}>
                 
                 <InnerInfo >
-                    <h3>Latin Name</h3>
+                    <h3>Latin</h3>
                     <p>{props.latin}</p>
                 </InnerInfo>
 
