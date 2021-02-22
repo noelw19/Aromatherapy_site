@@ -138,7 +138,7 @@ const Search = () => {
         <SearchContainer>
             
             <InputContainer >
-                <input input='text' value={searchValue}  onChange={handleOnChange}/>
+                <input input='text' value={searchValue}  disabled={clickedView ? true : false} onChange={handleOnChange}/>
             </InputContainer>
             {clickedView && <button onClick={handleGoBack}>Go back</button>}
             {searchBoolean ? <RenderContainer> {CardMap()} </RenderContainer> : <NoResult><p>No results containing '{searchValue}'</p><img src={errorImage} alt='error'></img></NoResult>}

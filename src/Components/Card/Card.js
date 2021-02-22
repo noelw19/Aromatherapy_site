@@ -5,7 +5,6 @@ import Images from '../../Images/index';
 
 const CardContainer = styled.div`
     background: white;
-    width: 50vw;
     padding: 0 1rem 0 1rem;
     
     
@@ -19,7 +18,7 @@ const CardContainer = styled.div`
     }
 
     h3{
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     li {
@@ -27,54 +26,103 @@ const CardContainer = styled.div`
     }
 
     p{
-        font-size: .5rem;
+        font-size: .6rem;
     }
 
     img {
         border-radius: 50%;
         width: 60%;
-        height: 8rem;
+        height: 6rem;
         object-fit: cover;
-    
-        @media(min-width: 660px) {
-            width: 75%;
-        height: 18rem;
-        border-radius: 30%;
-    
-        }
+
         
     }
 
-    .bottom {
-        border-bottom: none;
+    //clicked conditional styling
+    .clicked img{
+        height: 12rem;
+
     }
 
+    .clicked {
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        li {
+            font-size: .8rem;
+        }
+
+        p {
+            font-size: .8rem;
+        }
+    }
+
+    .notClicked {
+    }
+    
+    
     //desktop breakpoint
     @media(min-width: 660px) {
-        width: 35vw;
-        border-radius: 13%;
+        
+        border-radius: none;
 
         h1{
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         h3{
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
     
         li {
-            font-size: 1rem;
+            font-size: .7rem;
         }
     
         p{
-            font-size: 1rem;
+            font-size: .7rem;
         }
-    }
+
+        .clicked img{
+            width: 25vw;
+            height: 15rem;
+            border-radius: 30%;
+        }
+
+
+        .clicked {
+            width: 80vw;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .notClicked {
+            width: 25vw;
+        }
+
+        .notClicked img {
+            height: 12rem;
+        }
+
+        .titleImageContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+
+        }
+
+    }   
 `;
 
 const InfoContainer = styled.div`
-    width: 100%;
+    height: 50%;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
     
     
     ul {
@@ -82,12 +130,19 @@ const InfoContainer = styled.div`
         padding:0;
     }
 
+    .notClicked {
+        width: 100%;
+    }
+
+    .clicked {
+        width: 80%;
+    }
     
 `;
 
 const InnerInfo = styled.div`
     width: 50%;
-    height: auto;
+    height: 60%;
 
     .warning{
         color: red;
@@ -125,11 +180,11 @@ const Card = (props) => {
     const SmallCardView = () => {
         return (
             <>
+            <div className='titleImageContainer'>
             <h1>{props.name}</h1>
-            <div>
             <img src={imagePicker(props.name)} alt={props.name}></img>
             </div>
-            <InfoContainer>
+            <InfoContainer className={props.clicked ? 'clicked' : 'notClicked'}>
                 
                 <InnerInfo >
                     <h3>Latin Name</h3>
@@ -146,6 +201,8 @@ const Card = (props) => {
                          : <p>No warnings to show</p>}
                     </InnerInfo> 
 
+                    {props.clicked ? BigCardView() : null}
+
                 </InfoContainer></>
         )
     }
@@ -153,8 +210,6 @@ const Card = (props) => {
     const BigCardView = () => {
         return (
             <>
-                <InfoContainer>
-                
                     <InnerInfo>
                         <h3>Treatments</h3>
                         
@@ -173,10 +228,6 @@ const Card = (props) => {
                         ))}</ul>
                     </InnerInfo> 
 
-                </InfoContainer>
-
-                <InfoContainer className='bottom'>
-                
                     <InnerInfo>
                     <h3>Ways to be used</h3>
                     <ul>
@@ -194,21 +245,20 @@ const Card = (props) => {
                         ))}</ul>
                      : <p>This herbs blends best on its own.</p>}
                     </InnerInfo> 
-
-                </InfoContainer>
             </>
         )
     }
  
-    const handleOnClick = () => {
+    const handleOnClick = () => 
+    {
         SetThisHerb(props.name);
-        // props.cardValue(thisHerb)
     }
 
     return (
-        <CardContainer onClick={handleOnClick}> 
-                {SmallCardView()}
-                {props.clicked ? BigCardView() : null}
+        <CardContainer onClick={handleOnClick} >
+                <div className={props.clicked ? 'clicked': 'notClicked'}>  
+                    {SmallCardView()}
+                 </div>
 
         </CardContainer>
     )
