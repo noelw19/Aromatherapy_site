@@ -17,10 +17,12 @@ const SearchContainer = styled.div`
 
     button {
         border: none;
-        border-radius: none;
+        border-radius: 13%;
+        width: 5rem;
+        height: 2rem;
         cursor: pointer;
         background: white;
-        color: black;
+        color: #ff6495;
     }
 
     button:hover {
@@ -67,6 +69,10 @@ const NoResult = styled.div`
         width:50%;
         height:auto;
     }
+
+    p{
+        color: #78fff1;
+    }
 `;
 
 const Search = () => {
@@ -106,7 +112,7 @@ const Search = () => {
 
             setSearchValue(val);
             setClickedView(true);
-            document.documentElement.scrollTop = 0
+            document.documentElement.scrollTop = 120
         }
     }
 

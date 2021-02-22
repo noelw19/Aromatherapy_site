@@ -7,10 +7,9 @@ const CardContainer = styled.div`
     background: white;
     padding: 0 1rem 0 1rem;
     
-    
     h1{
         color: black;
-        margin: 3rem 2rem 0 2rem;
+        margin: 1rem 2rem 0 2rem;
         padding: 2rem 0 .5rem 0;
         height: auto;
         font-size: 1.5rem;
@@ -19,14 +18,17 @@ const CardContainer = styled.div`
 
     h3{
         font-size: .8rem;
+        text-align: left;
     }
 
     li {
         font-size: .5rem;
+        text-align: left;
     }
 
     p{
         font-size: .6rem;
+        text-align: left;
     }
 
     img {
@@ -34,14 +36,18 @@ const CardContainer = styled.div`
         width: 60%;
         height: 6rem;
         object-fit: cover;
-
-        
     }
 
-    //clicked conditional styling
+    //clicked conditional styling for mobile
     .clicked img{
-        height: 12rem;
+        width: 60%;
+        height: 16rem;
 
+    }
+
+    .notClicked img {
+        width:80%;
+        height: 8rem;
     }
 
     .clicked {
@@ -57,44 +63,12 @@ const CardContainer = styled.div`
             font-size: .8rem;
         }
     }
-
-    .notClicked {
-    }
     
-    
-    //desktop breakpoint
+    //styling for desktop
     @media(min-width: 660px) {
-        
-        border-radius: none;
-
-        h1{
-            font-size: 1.5rem;
-        }
-
-        h3{
-            font-size: 1rem;
-        }
-    
-        li {
-            font-size: .7rem;
-        }
-    
-        p{
-            font-size: .7rem;
-        }
-
-        .clicked img{
-            width: 25vw;
-            height: 15rem;
-            border-radius: 30%;
-        }
-
 
         .clicked {
-            width: 80vw;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            width: 50vw;
             margin-top: 1rem;
         }
 
@@ -102,7 +76,42 @@ const CardContainer = styled.div`
             width: 25vw;
         }
 
+        .clicked h1{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .notClicked h1{
+            margin-bottom: 1rem;
+        }
+
+        .clicked h3{
+            font-size: 1.2rem;
+        }
+    
+        .clicked li {
+            font-size: .8rem;
+        }
+    
+        .clicked p{
+            font-size: .8rem;
+        }
+
+        .clicked img{
+            width: 20vw;
+            height: 16rem;
+            border-radius: 50%;
+        }
+
+        .clicked .flex-row {
+            display: flex;
+            justify-content: center;
+
+
+        }
+
         .notClicked img {
+            width: 60%;
             height: 12rem;
         }
 
@@ -111,6 +120,7 @@ const CardContainer = styled.div`
             flex-direction: column;
             align-items: center;
             height: 100%;
+            margin-bottom: 0;
 
         }
 
@@ -135,13 +145,13 @@ const InfoContainer = styled.div`
     }
 
     .clicked {
-        width: 80%;
+        width: 50%;
     }
     
 `;
 
 const InnerInfo = styled.div`
-    width: 50%;
+    width: 35%;
     height: 60%;
 
     .warning{
@@ -179,7 +189,7 @@ const Card = (props) => {
 
     const SmallCardView = () => {
         return (
-            <>
+            <div className='flex-row'>
             <div className='titleImageContainer'>
             <h1>{props.name}</h1>
             <img src={imagePicker(props.name)} alt={props.name}></img>
@@ -203,7 +213,7 @@ const Card = (props) => {
 
                     {props.clicked ? BigCardView() : null}
 
-                </InfoContainer></>
+                </InfoContainer></ div>
         )
     }
 
