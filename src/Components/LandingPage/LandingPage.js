@@ -46,6 +46,7 @@ const DisplayArea = styled.div`
         @media(max-width: 700px) {
             width: 10rem;
             height: 10rem;
+            left: 50%;
         }
 
     }
@@ -165,6 +166,18 @@ const LandingPage = () => {
         setIsClicked(true);
     }
 
+
+
+    const MainPage = () => {
+        
+        return (
+            <>
+                <HeaderContainer />
+                <Search />
+            </>
+        )
+    }
+
     return(
         <>
             {!isClicked ? <LandingContainer onClick={handleOnClick}>
@@ -176,12 +189,7 @@ const LandingPage = () => {
                         <img className='pot' src={img1} alt="herbs hd @transparentpng.com"/>
                     </DisplayContainer>
                </DisplayArea>
-            </LandingContainer> : 
-            
-            <>
-                <HeaderContainer />
-                <Search />
-            </> 
+            </LandingContainer> : MainPage()           
             }
 
             
