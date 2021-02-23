@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
-import HeaderContainer from './Components/HeaderCont/headerCont';
-import Search from './Components/Search/Search';
-
-
+import LandingPage from './Components/LandingPage/LandingPage.js';
 
 
 function App() {
   return (
     <div className="App">
-      <HeaderContainer />
-      <Search />
+      <LandingPage />
     </div>
   );
 }

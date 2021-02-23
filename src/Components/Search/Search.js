@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-import errorImage from '../../Images/pexels-alleksana-4271933.jpg'
+import errorImage from '../../Images/pexels-alleksana-4271933.jpg';
 
 import herbs from '../../herbs.json';
 import Card from '../Card/Card';
@@ -21,13 +21,13 @@ const SearchContainer = styled.div`
         width: 5rem;
         height: 2rem;
         cursor: pointer;
-        background: white;
-        color: #ff6495;
+        background: #03a9f4;
+        color: #FFFFFF;
     }
 
     button:hover {
-        background-color: black;
-        color: white;
+        background-color: #FFFFFF;
+        color: #03a9f4;
     }
 `;
 

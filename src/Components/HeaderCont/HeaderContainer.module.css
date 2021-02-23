@@ -4,8 +4,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ff6495;
+    color: #FFFFFF;
     position: 'relative';
+    background-image: linear-gradient(to left #ffff #dddf);
 }
 
 .container .h1 {

@@ -4,30 +4,33 @@ import styled from 'styled-components';
 import Images from '../../Images/index';
 
 const CardContainer = styled.div`
-    background: white;
+    background: #FFFFFF;
+    box-shadow: 10px 5px 5px black;
     
     h1{
-        color: black;
+        color: #212121;
         padding: 1rem 0 .5rem 0;
         width: 100%;
         height: auto;
         font-size: 1.5rem;
-
     }
 
     h3{
         font-size: .8rem;
         text-align: left;
+        color: #212121;
     }
 
     li {
         font-size: .5rem;
         text-align: left;
+        color: #757575;
     }
 
     p{
         font-size: .6rem;
         text-align: left;
+        color: #757575;
     }
 
     img {
@@ -62,9 +65,6 @@ const CardContainer = styled.div`
             font-size: .8rem;
         }
     }
-
-    .notClicked {
-    }
     
     //styling for desktop
     @media(min-width: 660px) {
@@ -72,10 +72,12 @@ const CardContainer = styled.div`
         .clicked {
             width: 50vw;
             margin-top: 1rem;
+            padding: 1.5rem 0 0 1rem;
         }
 
         .notClicked {
             width: 25vw;
+            padding: 0 1rem;
         }
 
         .clicked h1{
@@ -108,8 +110,6 @@ const CardContainer = styled.div`
         .clicked .flex-row {
             display: flex;
             justify-content: center;
-
-
         }
 
         .notClicked img {
@@ -123,7 +123,6 @@ const CardContainer = styled.div`
             align-items: center;
             height: 100%;
             margin-bottom: 0;
-
         }
 
     }   
@@ -135,8 +134,6 @@ const InfoContainer = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
 
-    
-    
     ul {
         list-style: none;
         padding:0;
