@@ -101,7 +101,7 @@ const DisplayArea = styled.div`
     }
 
     @keyframes slideUp {
-        from {transform: translateY(400px);}
+        from {transform: translateY(700px);}
         to {transform: translateY(135px): transform: translateX(50px)}
     }
 
