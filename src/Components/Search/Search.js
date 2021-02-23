@@ -59,6 +59,15 @@ const RenderContainer = styled.div`
         margin-bottom: 1rem;
     }
 
+    @keyframes slideLeft {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
 `;
 
 const NoResult = styled.div`

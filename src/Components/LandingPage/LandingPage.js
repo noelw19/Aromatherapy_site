@@ -84,7 +84,7 @@ const DisplayArea = styled.div`
         letter-spacing: 1px;
         
         animation: slideUp 1.5s;
-        animation-delay: 1.5s;
+        animation-delay: 2.5s;
         animation-fill-mode: backwards;
 
         @media(max-width: 700px) {
@@ -101,8 +101,8 @@ const DisplayArea = styled.div`
     }
 
     @keyframes slideUp {
-        from {transform: translateY(700px);}
-        to {transform: translateY(135px): transform: translateX(50px)}
+       from {opacity: 0; }
+       to {opacity: 1;}
     }
 
 
@@ -133,7 +133,7 @@ const DisplayContainer = styled.div`
         position: relative;
         transform: translateY(-270px) translateX(-15px);
         animation: hideAndShow 2s;
-        animation-delay: 2s;
+        animation-delay: 1.5s;
         animation-fill-mode: backwards;
         filter: grayscale(50%);
 
