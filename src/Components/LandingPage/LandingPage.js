@@ -96,6 +96,12 @@ const DisplayArea = styled.div`
         }
     }
 
+    h5:hover {
+        background-color: #ffff;
+        border-color: transparent;
+        color: black;
+    }
+
     @keyframes slideLeft {
         from {left: -25%}
         to {transform: translateX(-50%)}
@@ -136,7 +142,6 @@ const DisplayContainer = styled.div`
         animation: hideAndShow 2s;
         animation-delay: 1.5s;
         animation-fill-mode: backwards;
-        filter: grayscale(50%);
 
         @media(max-width: 700px) {
             width: 70%;
@@ -166,7 +171,20 @@ const LandingPage = () => {
         setIsClicked(true);
     }
 
-
+    const InitialLanding = () => {
+        return (
+            <LandingContainer onClick={handleOnClick}>
+               <DisplayArea>
+                   <div className='ball'></div>
+                   <h1>Aromatherapy Information</h1>
+                   <h5>Click anywhere to begin.</h5>
+                   <DisplayContainer>
+                        <img className='pot' src={img1} alt="herbs hd @transparentpng.com"/>
+                    </DisplayContainer>
+               </DisplayArea>
+            </LandingContainer>
+        )
+    }
 
     const MainPage = () => {
         
@@ -180,19 +198,7 @@ const LandingPage = () => {
 
     return(
         <>
-            {!isClicked ? <LandingContainer onClick={handleOnClick}>
-               <DisplayArea>
-                   <div className='ball'></div>
-                   <h1>Aromatherapy Information</h1>
-                   <h5>Click anywhere to begin.</h5>
-                   <DisplayContainer>
-                        <img className='pot' src={img1} alt="herbs hd @transparentpng.com"/>
-                    </DisplayContainer>
-               </DisplayArea>
-            </LandingContainer> : MainPage()           
-            }
-
-            
+            {!isClicked ? InitialLanding() : MainPage()}
         </>
     )
 }
